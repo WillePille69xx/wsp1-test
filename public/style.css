@@ -1,0 +1,48 @@
+body {
+    font-family: Comic Sans MS;
+    font-size: 1.2rem;
+    color: #000000;
+}
+
+.container {
+    max-width: 56rem;
+    margin-inline: auto;
+}
+
+img {
+    max-width: 25%;
+    max-height: 25%;
+    border-radius: 40px;
+    box-shadow: #000000 5px 5px 15px;
+}
+
+img:hover {
+    max-width: 30%;
+    max-height: 30%;
+    border-radius: 40px;
+}
+
+nav {
+    background-color: #d3d3d3;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: rgb(225, 255, 255) 5px 5px 15px;
+    list-style: none;
+    display: flex;
+    gap: 2rem
+}
+
+nav a {
+    text-decoration: none;
+    color:#000000;
+    box-shadow: #805858 1px 1px 5px;
+    border-radius: 90px;
+    padding: .5rem;
+    background-color:aliceblue;
+}
+
+nav a:hover {
+    background-color: #d3d3d3;
+    box-shadow: #000000 2px 2px 10px;
+    color: crimson;
+}

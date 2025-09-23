@@ -1,16 +1,37 @@
 import express from "express"
+import nunjucks from "nunjucks"
+import morgan from "morgan"
 
 const app = express()
 
+app.use(morgan("dev"))
+app.use(express.static("public"))
+
+
+nunjucks.configure("views", {
+    autoescape: true,
+    express: app
+})
+
+
 app.get("/", (req, res) => {
-    console.log(res)
-    res.send("<h1>Hello World!<h1>")
+    res.render("index.njk", {
+        title: "Our First Dynamic Site.",
+        message: "With Nunjucks We Create Magic."
+    })
 })
 
 app.get("/about", (req, res) => {
-    res.json({
-        "message": "Hellohaso"
+    res.render("about.njk", {
+        title: "About us",
+        message: "This is a school project.",
+        image: "/img/Mercenary_shadow.jpeg"
     })
+})
+
+app.get("/greeting", (req, res) => {
+    console.log(req.query)
+    res.send(`Hello ${req.query.name}, ${req.query.message}`)
 })
 
 app.listen(3000, () => {
